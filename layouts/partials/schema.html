@@ -11,6 +11,7 @@
         "headline" : "{{ .Title }}",
         "description" : "{{ if .Description }}{{ .Description }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ end }}{{ end }}",
         "inLanguage" : "en",
+        "summary" : "{{ .Summary }}",
         "author" : "{{ .Page.Params.author }}",
         "creator" : "{{ .Page.Params.author }}",
         "publisher": "{{ .Page.Params.author }}",

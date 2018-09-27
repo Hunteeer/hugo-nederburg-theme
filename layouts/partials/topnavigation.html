@@ -21,6 +21,14 @@
 
   <ul class="social-media-icons">
 
+    {{ if .Site.Params.search }}
+    <li>
+      <a href="{{"/search/index.html"|absURL}}" data-animate-hover="pulse" class="search-in" target="_blank">
+        <i class="fa fa-search" title="search"></i>
+        <span class="screen-reader-text">search</span>
+      </a>
+    </li>
+    {{end}}
 
     {{ with .Site.Params.social.facebook }}
     <li>
