@@ -2,12 +2,11 @@
 <html lang="{{ .Site.LanguageCode }}">
 
 <head>{{ partial "head.html" . }}</head>
-{{ block "body" . }}
+{{ block "body" . }} {{ end }}
 
-<body class="home blog ct-body standard">
-    {{ end }}
+<body class="home blog ct-body standard"> 
     <div id="overflow-container" class="overflow-container">
-        <a class="skip-content" href="#main">Skip to content</a>
+        <a class="skip-content" href="#main"></a>
         <header id="site-header" class="site-header" role="banner">
             <div class='top-navigation'>
                 {{ partial "topnavigation.html" . }}
@@ -20,9 +19,6 @@
     </div>
     {{ partial "footer.html" . }}
     </div>
-    <div id="back-to-top"><i class="fa fa-chevron-up"></i></div>
     {{ partial "scripts.html" . }}
-    
 </body>
-
 </html>

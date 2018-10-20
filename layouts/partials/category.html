@@ -19,7 +19,7 @@
             <div class="post type-post status-publish format-standard hentry category-standard category-travel excerpt zoom full-without-featured odd excerpt">
                 {{ end }} {{ if and (isset .Params "image") .Params.image }}
                 <a class="featured-image-link" href="{{ .Permalink }}">
-                    <div class='featured-image lazy lazy-bg-image' {{if isset .Site.Params "usepostimgfolder"}}data-background="{{ .Permalink }}{{ .Params.image }}" {{ else }}data-background="{{ .Params.image | absURL }}" {{ end }}></div>
+                    <div class='featured-image lazy lazy-bg-image' {{if isset .Site.Params "usepostimgfolder"}}data-background="{{ .Permalink }}{{ .Params.image }}" {{ else }}data-background="{{ .Params.image | relURL }}" {{ end }}></div>
                 </a>
                 {{ end }}
                 <div class="excerpt-container">
@@ -27,7 +27,7 @@
                         <span class="date">{{ .Date.Format "02 January" }}</span> {{ if and (isset .Site.Params "authorlink") .Site.Params.authorLink }} {{ if and (isset .Site.Params "author") .Site.Params.author }}
                         <span> / </span>
                         <span class="author">
-							<a href="{{ $writer.link | default .Site.Params.authorlink | absURL }}" title="Posts by {{ .Params.writer | default .Site.Params.author }}" rel="author">{{ .Params.writer | default .Site.Params.author }}</a>
+							<a href="{{ $writer.link | default .Site.Params.authorlink | relURL }}" title="Posts by {{ .Params.writer | default .Site.Params.author }}" rel="author">{{ .Params.writer | default .Site.Params.author }}</a>
 							</span> {{ end }} {{ else }}
                         <span class="author">
 							{{ .Params.writer | default .Site.Params.author }}
@@ -52,3 +52,5 @@
             </div>
             {{ end }}
         </div>
+    </div>
+</div>
